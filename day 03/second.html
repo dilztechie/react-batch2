@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second</title>
+</head>
+
+<body>
+    <h3>Arrays</h3>
+    <div id="display"></div>
+
+    <script>
+        // Arrays are Collection of Values in a Single Reference
+        let favNumbers = [12, 15, 26, 21, 14, 30, 8, 3];
+        let names = ["Dilip", "Kiran", "Gopal"];
+        document.getElementById("display").innerHTML += "Names: " + names + "<br />";
+        let veggies = ["Carrot", "Beans", "Peas", "Brinjal", "Cucumber"];
+        let total = 0;
+        /*
+        for (let index = 0; index < favNumbers.length; ++index) {
+            total += favNumbers[index];
+        }
+        */
+        for (let number of favNumbers) {
+            total += number;
+        }
+        document.getElementById("display").innerHTML += "Numbers: " + favNumbers +
+            " :: Total: " + total + "<br />";
+
+        let numbers = []; //creating an Empty Array: let numbers = new Array();
+        let values = [0, 0, 0]; // let values = new Array(3);
+
+        let employeeNames = ["Dilip", "Kiran", "Gopal", "Raj", "Rahul", "Santhosh", "Mahesh"];
+        employeeNames[3]; // value of element 3 of the array: Raj
+        employeeNames.length; // length of the array: 7
+        // mix of datatypes values in an array
+        let myArray = [12, "Dilip", 'M', "Trainer", true, 34457.43];
+        alert(employeeNames[employeeNames.length - 1]); // Mahesh
+        alert(employeeNames.at(-1)); // Mahesh
+
+        employeeNames.push("Kavya"); // adds "Kavya" at the end of the Array
+        employeeNames.pop(); // remove the last value of the Array
+
+        employeeNames.unshift("Ashok"); // adds "Ashok" at the begining of the Array
+        employeeNames.shift(); // remove the first value of the Array
+
+        employeeNames.indexOf("Rahul"); // position of "Rahul" in the Array
+    </script>
+</body>
+
+</html>

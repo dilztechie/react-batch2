@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenth</title>
+</head>
+
+<body>
+    <pre id="display"></pre>
+    <script>
+        // Arrow Functions: Functions written as Expressions
+        let printEmpty = () => document.getElementById("display").innerHTML += "<br />";
+        let print = (message) => document.getElementById("display").innerHTML += message + "<br />";
+        let printSum = (first, second) => first + second;
+
+        print("This is an Example for Arrow Functions");
+        printEmpty();
+        print("The Above Line is Empty");
+        print("Sum = " + printSum(12, 26));
+        
+        (function () {
+            console.log("This is an Anonymous Function");
+        })();
+    </script>
+</body>
+
+</html>
