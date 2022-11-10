@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify In Place</title>
+</head>
+
+<body>
+    <script>
+        let number = 15;
+        alert('number: ' + number);
+        number += 12; // number = number + 12
+        alert('number: ' + number);
+        number *= 2; // number = number * 2
+        alert('number: ' + number);
+
+        let value = 12;
+        alert('value: ' + value);
+        value *= 3 + 5; // right part will be evaluated first
+        alert('value: ' + value);
+    </script>
+</body>
+
+</html>

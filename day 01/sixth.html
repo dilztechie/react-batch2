@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Conversions</title>
+</head>
+
+<body>
+    <script>
+        let value = 1226;
+        alert('value: ' + value + "\n" + '-value: ' + -value);
+
+        let id = 12;
+        let name = "Dilip";
+        let gender = 'M';
+        let isMarried = true;
+        let salary = 34332.234;
+
+        alert(
+            "typeof id: " + typeof id + "\n" +
+            "typeof name: " + typeof name + "\n" +
+            "typeof gender: " + typeof gender + "\n" +
+            "typeof isMarried: " + typeof isMarried + "\n" +
+            "typeof salary: " + typeof salary
+        );
+
+        // strings are automatically converted to number since there is an operator / between them
+        alert("12" / "4");
+
+        let randomNumber = "123";
+        alert("typeof randomNumber: " + typeof randomNumber);
+        let number = Number(randomNumber);
+        alert("typeof number: " + typeof number + "\nvalue: " + number);
+
+        alert(Number("               12345                "));
+        alert(Number("123abc"));
+        alert(Number(true));
+        alert(Number(false));
+
+        alert(
+            "Boolean(1): " + Boolean(1) + "\n" +
+            "Boolean(0): " + Boolean(0) + "\n" +
+            "Boolean(12): " + Boolean(12) + "\n" +
+            "Boolean(-26): " + Boolean(-26) + "\n" +
+            "Boolean('Dilip'): " + Boolean('Dilip') + "\n" +
+            "Boolean(''): " + Boolean('') + "\n" +
+            "Boolean(null): " + Boolean(null) + "\n" +
+            "Boolean(NaN): " + Boolean(NaN)
+        );
+    </script>
+</body>
+
+</html>
