@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eighth</title>
+</head>
+
+<body>
+    <h3>Loops</h3>
+    <div id="display"></div>
+    <script>
+        /*
+        // while Repetition: pre-testing
+        let counter = 1, total = 0;
+        while (counter <= 10) {
+            total += parseInt(prompt("grade " + counter++ + "?"));
+        }
+        document.getElementById("display").innerHTML = `
+            <p>Total: ${total}</p>
+            <p>Average: ${total / 10}</p>
+        `;
+        */
+
+        /*
+        // do..while: post-testing
+        let counter = 0, total = 0, grade, passCounter = failCounter = 0;
+        alert("enter grades or - 1 to quit");
+        do {
+            grade = parseInt(prompt("grade (-1 to quit)? "));
+            if (grade != -1) {
+                total += grade;
+                if (grade < 35) ++failCounter; else ++passCounter;
+                ++counter;
+            }
+        } while (grade != -1);
+        document.getElementById("display").innerHTML = `
+            <p>No. of Grades: ${counter}</p>
+            <p>Total: ${total}</p>
+            <p>Average: ${total / counter}</p>
+            <p>Passes: ${passCounter}</p>
+            <p>Failures: ${failCounter}</p>
+        `;
+        */
+
+        /*
+        // for: pre-testing
+        let number = parseInt(prompt("number?"));
+        //        (1)           (2)   <------   (4)
+        for (let counter = 1; counter <= 10; ++counter) {
+            //                      /
+            //                     /
+            // (3)
+            document.getElementById("display").innerHTML += `
+                ${number} x ${counter} = ${number * counter} <br />
+            `;
+        }
+        */
+
+        let principal = parseFloat(prompt("principal amount?"));
+        let rateOfInterest = parseFloat(prompt("rate of interest?"));
+        let duration = parseInt(prompt("number of years?"));
+
+        let strDisplay = `
+            <table border=1>
+                <tr>
+                    <th>Year</th>
+                    <th>Loan Amount</th>
+                </tr>
+        `;
+        for (let year = 1; year <= duration; ++year) {
+            strDisplay += `
+                <tr>
+                    <td>${year}</td>
+                    <td>${(principal * ((1.0 + rateOfInterest) ** year))}</td>
+                </tr>
+            `;
+        }
+        strDisplay += '</table>';
+
+        document.getElementById('display').innerHTML = strDisplay;
+    </script>
+</body>
+
+</html>
