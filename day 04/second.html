@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second</title>
+</head>
+
+<body>
+    <pre id="display"></pre>
+    <script>
+        let println = (text) => 
+            document.getElementById('display').innerHTML += (text ?? "You eat unhealthy!!") + "<br />";
+        // let employee = {}; // empty object
+        // let employee = new Object(); // empty object
+        let food = prompt("favourite food?", "sprouts")
+        let employee = {
+            id: 12,
+            name: "Dilip",
+            designation: "Trainer",
+            gender: 'M',
+            salary: 34567.12,
+            isMarried: true,
+            "favourite movies": ["Kantara", "RRR"],
+            [food]: "Sprouts are good for health!"
+        }
+        println("Employee Details:");
+        println("id: " + employee.id);
+        println("name: " + employee.name);
+        println("designation: " + employee.designation);
+        println("gender: " + ((employee.gender == 'M' || employee.gender == 'm') ? "Male" : "Female"));
+        println("salary: " + employee.salary);
+        println("married?: " + employee.isMarried);
+        println("favourite movies: " + employee["favourite movies"])
+        println(employee.sprouts)
+        println("<hr />")
+    </script>
+</body>
+
+</html>

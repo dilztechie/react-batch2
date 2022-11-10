@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fifth</title>
+</head>
+
+<body>
+    <pre id="display"></pre>
+    <script>
+        let println = (text) => document.getElementById('display').innerHTML += text + "<br />";
+
+        let myMap = new Map(); // create a Map
+        /*
+        myMap.set('id', 12);
+        myMap.set('name', 'Dilip');
+        myMap.set('gender', 'M');
+        myMap.set('designation', 'Trainer');
+        */
+
+        myMap
+            .set('id', 12)
+            .set('name', 'Dilip')
+            .set('gender', 'M')
+            .set('designation', 'Trainer');
+        // myMap.delete('gender');
+
+        println("There are " + myMap.size + " key, value pairs in myMap")
+        println("id: " + myMap.get('id'))
+        println("name: " + myMap.get('name'))
+        println("gender: " + myMap.get('gender'))
+        println("designation: " + myMap.get('designation'))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eighth</title>
+</head>
+
+<body>
+    <pre id="display"></pre>
+    <script>
+        let println = (text) => document.getElementById('display').innerHTML += text + "<br />";
+
+        let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+        let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+        let birthDate = new Date(1973, 2, 12, 18, 45, 0);
+        let today = new Date();
+        println("Birth Date: " +
+            birthDate.getDay() + " - " +
+            months[birthDate.getMonth()] + " - " +
+            birthDate.getFullYear()
+        );
+        println("Today:")
+        println("Day: " + days[today.getDay()]);
+        println("Date: " + today.getDate());
+        println("Month: " + months[today.getMonth()]);
+        println("Year: " + today.getFullYear());
+        println("Hour: " + today.getHours());
+        println("Minute: " + today.getMinutes());
+        println("Seconds: " + today.getSeconds());
+    </script>
+</body>
+
+</html>

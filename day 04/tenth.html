@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenth</title>
+</head>
+
+<body>
+    <pre id="display"></pre>
+    <script>
+        let println = (text) => document.getElementById('display').innerHTML += text + "<br />";
+
+        let employee = {
+            id: 12,
+            name: "Dilip",
+            designation: "Trainer",
+            isMarried: true,
+            favMovies: ["Kantara", "RRR"]
+        }
+
+        println(JSON.stringify(employee));
+
+        let strMovie = '{"title": "Kantara", "cast": "Rishabh Shetty", "language": "Kannada"}';
+        println("type of strMovie is: " + typeof strMovie); // string
+        println("movie as a string: " + strMovie);
+        let movie = JSON.parse(strMovie);
+        println("type of movie is: " + typeof movie); // object
+        println("movie as a object: " + JSON.stringify(movie));
+    </script>
+</body>
+
+</html>

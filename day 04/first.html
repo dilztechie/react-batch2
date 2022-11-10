@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First</title>
+</head>
+
+<body>
+    <pre id="display"></pre>
+    <script>
+        let print = (text) => document.getElementById('display').innerHTML += text + '<br />';
+        let printArray = (array) => array.forEach(
+            element => document.getElementById('display').innerHTML += element + "   "
+        );
+        let sum = (...args) => { // rest parameters
+            let total = 0;
+            args.forEach(arg => total += arg);
+            return total;
+        };
+        print('This is a Demo Function');
+        let myArray = [12, "Dilip", "Trainer", 'M', true, 34567.12];
+        printArray(myArray);
+        print('');
+        print("Sum = " + sum(12, 26));
+        print("Sum = " + sum(12));
+        print("Sum = " + sum(12, 26, 30));
+        print("Sum = " + sum());
+    </script>
+</body>
+
+</html>
