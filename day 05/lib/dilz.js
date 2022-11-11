@@ -1,0 +1,1 @@
+println = (text, id) => document.getElementById(id).innerHTML += text + "<br />"

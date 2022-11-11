@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSM Arena</title>
+    <script src="lib/dilz.js"></script>
+    <script src="objects/basic-phone.js"></script>
+    <script src="objects/smart-phone.js"></script>
+</head>
+
+<body>
+    <div id="display"></div>
+    <script>
+        let nokia1100 = new BasicPhone("Nokia", "1100", "GSM",
+            "106 x 46 x 20 mm, 79 cc (4.17 x 1.81 x 0.79 in)",
+            "Mini-SIM", "96 x 65 pixels, 4 lines, 3:2 ratio",
+            false, false, false, 4.30, 1799)
+
+        let tmobile = new BasicPhone("T-Mobile", "MDA Basic", "GSM",
+            "105 x 59 x 16 mm (4.13 x 2.32 x 0.63 in)",
+            "Mini-SIM", "240 x 320 pixels, 4:3 ratio (~143 ppi density)",
+            "microSD (dedicated slot)", "2 MP", "2.0, A2DP", 8, 2700)
+
+        let onePlus9R = new SmartPhone("OnePlus", "9R", "GSM / HSPA / LTE / 5G",
+            "161 x 74.1 x 8.4 mm (6.34 x 2.92 x 0.33 in)",
+            "Dual SIM (Nano-SIM, dual stand-by)", "	Fluid AMOLED, 120Hz, HDR10+",
+            "6.55 inches, 103.6 cm2 (~86.8% screen-to-body ratio)",
+            "1080 x 2400 pixels, 20:9 ratio (~402 ppi density)",
+            "Android 10, upgradable to Android 12, OxygenOS 12",
+            "Qualcomm SM8250-AC Snapdragon 870 5G (7 nm)",
+            "Octa-core (1x3.2 GHz Kryo 585 & 3x2.42 GHz Kryo 585 & 4x1.80 GHz Kryo 585)",
+            "Adreno 650", false, "128GB 8GB RAM, 256GB 8GB RAM, 256GB 12GB RAM",
+            true, 5, 48, "5.1, A2DP, LE, aptX HD",
+            "Fingerprint (under display, optical), accelerometer, gyro, proximity, compass",
+            28, 39999)
+
+        println(nokia1100.showBasic(), "display")
+        println(tmobile.showBasic(), "display")
+        println(onePlus9R.showSmart(), "display")
+    </script>
+</body>
+
+</html>

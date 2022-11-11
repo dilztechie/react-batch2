@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAS-A Relation</title>
+    <script src="lib/dilz.js"></script>
+    <script src="objects/department.js"></script>
+    <script src="objects/employee.js"></script>
+</head>
+
+<body>
+    <pre id="departments"></pre>
+    <hr />
+    <pre id="employees"></pre>
+    <hr />
+
+    <script>
+        let sales = new Department(101, "Sales", "Mumbai")
+        let service = new Department(102, "Service", "Chennai")
+        let support = new Department(103, "Support", "Hyderabad")
+        let hr = new Department(105, "Human Resource", "New Delhi")
+        let training = new Department(106, "Training", "Pune")
+
+        println(sales, "departments")
+        println(service, "departments")
+        println(support, "departments")
+        println(hr, "departments")
+        println(training, "departments")
+
+        let employee1 = new Employee(12, "Dilip", "Trainer", training, 30000);
+        let employee2 = new Employee(15, "Kiran", "System Engineer", support, 50000);
+        let employee3 = new Employee(8, "Gopal", "HR", hr, 75000);
+        let employee4 = new Employee(7, "Mahesh", "Sales Executive", sales, 20000);
+        let employee5 = new Employee(30, "Ashok", "Sr. Developer", service, 40000);
+
+        println(employee1, "employees")
+        println(employee2, "employees")
+        println(employee3, "employees")
+        println(employee4, "employees")
+        println(employee5, "employees")
+    </script>
+</body>
+
+</html>

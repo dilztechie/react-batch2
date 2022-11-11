@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Class</title>
+    <script src="lib/dilz.js"></script>
+    <script src="objects/box.js"></script>
+</head>
+
+<body>
+    <pre id="display"></pre>
+    <script>
+        let box1 = new Box(10.0, 15.25, 21.5)
+        let box2 = new Box(1.0, 2.5, 5.5)
+        let box3 = new Box(12.0, 15.0, 26.0)
+        let box4 = box2
+        let box5 = box3.doubleBox()
+
+        box4.width = box3.width = 100
+
+        println(box1 + ", volume:" + box1.volume(), "display")
+        println(box2 + ", volume:" + box2.volume(), "display")
+        println(box3 + ", volume:" + box3.volume(), "display")
+        println(box4 + ", volume:" + box4.volume(), "display")
+        println(box5 + ", volume:" + box5.volume(), "display")
+    </script>
+</body>
+
+</html>

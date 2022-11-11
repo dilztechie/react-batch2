@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Class Demo</title>
+    <script src="lib/dilz.js"></script>
+    <script src="objects/employee.js"></script>
+</head>
+
+<body>
+    <pre id="display"></pre>
+    <script>
+        let employee1 = new Employee(12, "Dilip", 30000)
+        let employee2 = new Employee(15, "Kiran", 50000)
+        let employee3 = new Employee(8, "Gopal", 75000)
+
+        /*
+        println("Employee [id:" + employee1.id + ", name:" + employee1.name +
+            ", salary:" + employee1.salary + "]", "display")
+        println("Employee [id:" + employee2.id + ", name:" + employee2.name +
+            ", salary:" + employee2.salary + "]", "display")
+        println("Employee [id:" + employee3.id + ", name:" + employee3.name +
+            ", salary:" + employee3.salary + "]", "display")
+        */
+
+        println(employee1, "display") // implicitly call the toString() method of the class
+        println("DA: " + employee1.dearnessAllowance() + ", TA: " + employee1.travellingAllowance() +
+            ", Gross Salary: " + employee1.grossSalary(), "display")
+        println("<hr />", "display")
+
+        println(employee2, "display")
+        println("DA: " + employee2.dearnessAllowance() + ", TA: " + employee2.travellingAllowance() +
+            ", Gross Salary: " + employee2.grossSalary(), "display")
+        println("<hr />", "display")
+
+        println(employee3, "display")
+        println("DA: " + employee3.dearnessAllowance() + ", TA: " + employee3.travellingAllowance() +
+            ", Gross Salary: " + employee3.grossSalary(), "display")
+        println("<hr />", "display")
+    </script>
+</body>
+
+</html>
