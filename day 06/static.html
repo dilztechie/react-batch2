@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Demo</title>
+    <script src="lib/console.js"></script>
+    <script src="objects/user.js"></script>
+</head>
+
+<body>
+    <pre id="display"></pre>
+    <script>
+        let users = [
+            new User("zeeshan", new Date(2019, 2, 12)),
+            new User("dilz", new Date()),
+            new User("kavz", new Date(2015, 3, 26))
+        ]
+
+        println(User.authenticate("dilip", "malani"), "display")
+        println("<hr />", "display")
+
+        println("Users Logged In:", "display")
+        users.forEach(user => println(user, "display"))
+        println("<hr />", "display")
+
+        /*
+        users.sort(User.sortByName)
+        println("Users Sorted by Name:", "display")
+        users.forEach(user => println(user, "display"))
+        println("<hr />", "display")
+
+        users.sort(User.sortByCreationDate)
+        println("Users Sorted by Creation Date:", "display")
+        users.forEach(user => println(user, "display"))
+        println("<hr />", "display")
+        */
+
+        users.sort((userA, userB) => {
+            if (userA.name.toString() < userB.name.toString()) return -1
+            else return 1
+        })
+        println("Users Sorted by Name:", "display")
+        users.forEach(user => println(user, "display"))
+        println("<hr />", "display")
+
+        users.sort((userA, userB) => userA.creationDate - userB.creationDate)
+        
+        println("Users Sorted by Creation Date:", "display")
+        users.forEach(user => println(user, "display"))
+        println("<hr />", "display")
+    </script>
+</body>
+
+</html>

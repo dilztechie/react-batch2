@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank</title>
+    <script src="lib/console.js"></script>
+    <script src="objects/account.js"></script>
+    <script src="objects/savings.js"></script>
+    <script src="objects/current.js"></script>
+</head>
+
+<body>
+    <pre id="display"></pre>
+    <script>
+        let SB1101, SB1102, SB1103, CC2101
+        let accounts = []
+
+        println("Opening of Accounts:", "display")
+
+        try {
+            SB1101 = new Savings("SB1101", "Dilip Malani", 10000)
+            accounts.push(SB1101)
+        } catch (error) {
+            println(error, "display")
+        }
+
+        try {
+            SB1102 = new Savings("SB1102", "Kiran Bekal", 300)
+            accounts.push(SB1102)
+        } catch (error) {
+            println(error, "display")
+        }
+
+        try {
+            SB1103 = new Savings("SB1103", "Gopal Narayan", -1000)
+            accounts.push(SB1103)
+        } catch (error) {
+            println(error, "display")
+        }
+
+        try {
+            CC2101 = new Current("CC2101", "Dilz Inc.", 50000)
+            accounts.push(CC2101)
+        } catch (error) {
+            println(error, "display")
+        }
+
+        try {
+            CC2102 = new Current("CC2102", "Goodluck Cafe", 3000)
+            accounts.push(CC2102)
+        } catch (error) {
+            println(error, "display")
+        }
+
+        println("<hr />", "display")
+
+        println("Initial Accounts with Opening Balances:", "display")
+        accounts.forEach(account => println(account, "display"))
+
+        println("<hr />", "display")
+
+        println("Transactions on Accounts:", "display")
+
+        try {
+            println("Withdraw 3000 from SB1101: " + SB1101.withdraw(3000), "display")
+        } catch (error) {
+            println(error, "display")
+        }
+
+        try {
+            println("Withdraw 7000 from SB1101: " + SB1101.withdraw(7000), "display")
+        } catch (error) {
+            println(error, "display")
+        }
+
+        try {
+            println("Deposit -1000 in CC2101: " + CC2101.deposit(-1000), "display")
+        } catch (error) {
+            println(error, "display")
+        }
+
+        try {
+            println("Withdraw 5000 from CC2101: " + CC2101.withdraw(5000), "display")
+        } catch (error) {
+            println(error, "display")
+        }
+
+        println("<hr />", "display")
+
+        println("Closing Balances:", "display")
+        accounts.forEach(account => println(account, "display"))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter</title>
+    <script src="lib/console.js"></script>
+</head>
+
+<body>
+    <pre id="display"></pre>
+    <script>
+        let numbers = [12, 26, 15, 14, 21, 30, 8]
+        println("Numbers Unsorted: " + numbers, "display")
+        numbers.sort((a, b) => a - b)
+        println("Numbers Sorted: " + numbers, "display")
+        numbers.reverse()
+        println("Numbers Reversely Sorted: " + numbers, "display")
+        let doubleNumbers = numbers.map(number => number * 2)
+        println("Double Numbers: " + doubleNumbers, "display")
+        let numbersGreaterThanTwentyFive = numbers.filter(number => number > 25)
+        println("Numbers > 25: " + numbersGreaterThanTwentyFive, "display")
+    </script>
+</body>
+
+</html>
