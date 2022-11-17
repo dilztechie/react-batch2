@@ -1,6 +1,6 @@
 import React from "react";
-import CmpMessage from "../message/message";
 import Message from "../../objects/Message";
+import CmpMessage from "../message/message";
 import './message-list.css'
 
 export default class MessageList extends React.Component {
@@ -13,11 +13,11 @@ export default class MessageList extends React.Component {
     ]
   }
 
-  render() {
-    return (
-      <div>
-        <CmpMessage messages={this.state.messages} />
-      </div>
-    );
-  }
+  render = () => (
+    <div>
+      {this.state.messages.map(message =>
+        <CmpMessage message={message} />
+      )}
+    </div>
+  )
 }

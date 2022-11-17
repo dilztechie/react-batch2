@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Header from './Header';
+import Footer from './Footer';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <App />
-);
+ReactDOM.createRoot(document.getElementById('header')).render(<Header />)
+ReactDOM.createRoot(document.getElementById('app')).render(<App />)
+ReactDOM.createRoot(document.getElementById('footer')).render(<Footer />)

@@ -1,11 +1,5 @@
-div {
-  border: 0;
-}
-
 .App {
   text-align: center;
-}
-
-.App-link {
-  color: #61dafb;
+  font-weight: bold;
+  color: brown;
 }

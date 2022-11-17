@@ -1,6 +1,9 @@
-function Footer() {
-    return (
-        <cite>Social Website:
+import './Footer.css'
+
+let Footer = () => (
+    <div>
+        <cite>
+            Social Website:
             <a
                 className="App-link"
                 href="http://www.facebook.com/dilip.malani"
@@ -10,7 +13,7 @@ function Footer() {
                 facebook
             </a>
         </cite>
-    )
-}
+    </div>
+)
 
 export default Footer

@@ -1,9 +1,5 @@
 import './Header.css'
 
-function Header() {
-    return (
-        <h3>Messenger App</h3>
-    )
-}
+let Header = () => <h3>Dilz Inc. Apps</h3>
 
 export default Header

@@ -4,13 +4,11 @@ import MessageList from "../message-list/message-list";
 import './message-container.css'
 
 export default class MessageContainer extends React.Component {
-  render() {
-    return (
-      <div>
-        <h3 className="heading">Messages</h3>
-        <MessageList />
-        <MessageForm />
-      </div>
-    )
-  }
+  render = () => (
+    <div>
+      <h3 className="heading">Messages</h3>
+      <MessageList />
+      <MessageForm />
+    </div>
+  )
 }

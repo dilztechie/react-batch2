@@ -1,18 +1,11 @@
 import './App.css';
-import Header from './Header';
-import Footer from './Footer';
 import MessageContainer from './components/message-container/message-container';
 
-function App() {
-  return (
-    <div>
-      <Header />
-      <div className="App">
-        <MessageContainer />
-      </div>
-      <Footer />
-    </div>
-  );
-}
+let App = () => (
+  <div className="App">
+    Messenger App
+    <MessageContainer />
+  </div>
+)
 
-export default App;
+export default App
