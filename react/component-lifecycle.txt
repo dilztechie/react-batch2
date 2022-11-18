@@ -1,0 +1,18 @@
+Component LifeCycle Methods:
+
+Mounting:
+* constructor()
+* getDerivedStateFromProps()
+* componentWillReceiveProps()
+* render()
+* componentDidMount()
+
+Updating:
+* getDerivedStateFromProps()
+* shouldComponentUpdate()
+* render()
+* getSnapshotBeforeUpdate()
+* componentDidUpdate()
+
+Unmounting:
+* componentWillUnmount()
