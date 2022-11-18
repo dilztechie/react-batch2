@@ -1,0 +1,20 @@
+.message {
+    color: crimson;
+    border-style: solid;
+    border-color: black;
+    border-width: thin;
+    margin: 1em;
+}
+
+.author {
+    color: blueviolet;
+    font-weight: bold;
+}
+
+.text {
+    color: chocolate;
+}
+
+.dates {
+    color: grey;
+}
