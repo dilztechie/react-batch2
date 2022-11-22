@@ -1,4 +1,5 @@
 import React from "react";
+// import data from "../../api/data";
 import MessageForm from "../message-form/message-form";
 import MessageList from "../message-list/message-list";
 import './message-container.css'

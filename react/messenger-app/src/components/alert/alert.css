@@ -1,0 +1,11 @@
+.success {
+    padding: 15px;
+    margin: 0 0 10px 0;
+    border: olivedrab solid 1px;
+    color: olive;
+}
+
+.error {
+    border: orangered solid 1px;
+    color: orangered;
+}

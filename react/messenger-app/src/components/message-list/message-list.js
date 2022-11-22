@@ -1,4 +1,5 @@
 import React from "react";
+import Alert from "../alert/alert";
 import CmpMessage from "../message/message";
 import './message-list.css'
 
@@ -22,16 +23,22 @@ export default class MessageList extends React.Component {
     }
   }
 
-  render = () => (
-    <div>
-      {this.state.messages.map(message =>
-        <CmpMessage
-          key={message.id}
-          id={message.id}
-          message={message}
-          handleDelete={this.handleDelete}
-          handleSave={this.handleSave} />
-      )}
-    </div>
-  )
+  render = () => (<>
+    {
+      this.state.messages.length > 0 ?
+        <><h4>You have {this.state.messages.length} Messages</h4>
+          <Alert type="success">
+            {this.state.messages.map(message =>
+              <CmpMessage
+                key={message.id}
+                id={message.id}
+                message={message}
+                handleDelete={this.handleDelete}
+                handleSave={this.handleSave} />
+            )}
+          </Alert></>
+        :
+        <Alert type="error">No Messages Yet</Alert>
+    }
+  </>)
 }
