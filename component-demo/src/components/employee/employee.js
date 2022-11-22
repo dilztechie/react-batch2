@@ -1,12 +1,22 @@
-import React from "react"
+import React from "react";
 import './employee.css'
 
 export default class Employee extends React.Component {
-  render = () => (
-    <div className="container">
-      <strong>Employee details of id: {this.props.employee.id}</strong>
-      name: {this.props.employee.name} <br />
-      salary: {this.props.employee.salary} <br />
-    </div>
-  )
+  render = () => {
+    let id = this.props.id
+    let name = this.props.name
+    let designation = this.props.designation
+    let skills = this.props.skills
+    let salary = this.props.salary
+    return (<div className="card">
+      <p>
+        <strong>Employee</strong> <br />
+        id: {id}<br />
+        name: {name}<br />
+        designation: {designation}<br />
+        skills: {skills.join(', ')}<br />
+        salary: {salary}
+      </p>
+    </div>)
+  }
 }
