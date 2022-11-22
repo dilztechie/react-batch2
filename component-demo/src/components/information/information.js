@@ -1,5 +1,6 @@
-import React from "react";
+import React from "react"
+import './information.css'
 
-export default class information extends React.Component {
-  render = () => <>Click on the Emojis to View their Names</>
+export default class Information extends React.Component {
+  render = () => <p className="text">Click on the Emojis to View their Names</p>
 }
