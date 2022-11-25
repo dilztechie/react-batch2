@@ -2,9 +2,15 @@ import React from "react";
 import './item.css'
 
 export default class Item extends React.Component {
-  render = () => <div className="item">
-    <button>{String.fromCodePoint(this.props.item.unicode)}</button><br />
-    {this.props.item.name}<br />
-    {this.props.item.price}
-  </div>
+  render = () => {
+    let handleCart = this.props.handleCart
+    let item = this.props.item
+    return (<div className="item">
+      <button className="btnIcon" onClick={() => { handleCart(item) }}>
+        {String.fromCodePoint(item.unicode)}
+      </button><br />
+      {item.name}<br />
+      {item.price}
+    </div>)
+  }
 }

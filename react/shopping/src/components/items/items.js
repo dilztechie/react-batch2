@@ -14,17 +14,26 @@ export default class Items extends React.Component {
     <div className="items-fruits">
       <div className="items-header">Fruits</div>
       {this.state.fruits.map(fruit =>
-        <Item key={fruit.unicode} item={fruit} />)}
+        <Item
+          key={fruit.unicode}
+          item={fruit}
+          handleCart={this.props.handleCart} />)}
     </div>
     <div className="items-vegetables">
       <div className="items-header">Vegetables</div>
       {this.state.vegetables.map(vegetable =>
-        <Item key={vegetable.unicode} item={vegetable} />)}
+        <Item
+          key={vegetable.unicode}
+          item={vegetable}
+          handleCart={this.props.handleCart} />)}
     </div>
     <div className="items-bakery">
       <div className="items-header">Bakery Items</div>
       {this.state.bakery.map(bread =>
-        <Item key={bread.unicode} item={bread} />)}
+        <Item
+          key={bread.unicode}
+          item={bread}
+          handleCart={this.props.handleCart} />)}
     </div>
   </div>
 }

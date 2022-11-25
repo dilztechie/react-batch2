@@ -12,3 +12,8 @@ li {
     padding-left: 10px;
     list-style: none;
 }
+
+.btnRemove {
+    background-color: black;
+    color: white;
+}
