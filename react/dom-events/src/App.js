@@ -1,9 +1,9 @@
 import './App.css';
-import Namer from './components/namer/namer';
+import Movies from './components/movies/movies';
 
 export default function App() {
   return (<div className="App">
     <header className="App-header">React DOM Events</header>
-    <Namer />
+    <Movies />
   </div>)
 }
