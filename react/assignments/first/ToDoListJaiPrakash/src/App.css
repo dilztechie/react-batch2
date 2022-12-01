@@ -1,0 +1,16 @@
+.app{
+  padding: 30px;
+  background-color: rgba(128, 128, 128, 0.178);
+}
+
+.todo{
+  align-items: center;
+  display: flex;
+  font-size: 18px;
+  justify-content: space-between;
+}
+
+.header{
+  color: rgb(16, 16, 82);
+  background-color: gray;
+}
