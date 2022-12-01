@@ -1,0 +1,66 @@
+{
+  "movies": [
+    {
+      "movie": {
+        "title": "Rocketry: The Nambi Effect",
+        "stars": "Madhavan, Simran, Rajit Kapoor, Shahrukh Khan",
+        "director": "Madhavan",
+        "language": "Hindi",
+        "release": 2022,
+        "genre": [
+          "Biography",
+          "Drama"
+        ],
+        "rating": 8.8
+      },
+      "id": 1
+    },
+    {
+      "movie": {
+        "title": "777 Charlie",
+        "stars": "Rakshit Shetty, Charlie, Sangeetha Sringeri, Raj Shetty",
+        "director": "Kiranraj K",
+        "language": "Kannada",
+        "release": 2022,
+        "genre": [
+          "Adventure",
+          "Comedy",
+          "Drama"
+        ],
+        "rating": 8.9
+      },
+      "id": 2
+    },
+    {
+      "movie": {
+        "title": "Nayakan",
+        "stars": "Kamal Haasan, Saranya, Ganesh",
+        "director": "Maniratnam",
+        "language": "Tamil",
+        "release": 2022,
+        "genre": [
+          "Crime",
+          "Drama"
+        ],
+        "rating": 8.6
+      },
+      "id": 3
+    },
+    {
+      "movie": {
+        "title": "Kantara",
+        "stars": "Rishab Shetty, Kishore Kumar, Achyuth Kumar",
+        "director": "Rishab Shetty",
+        "language": "Kannada",
+        "release": 2022,
+        "genre": [
+          "Action",
+          "Adventure",
+          "Drama"
+        ],
+        "rating": 8.8
+      },
+      "id": 4
+    }
+  ]
+}

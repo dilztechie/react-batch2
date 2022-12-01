@@ -1,0 +1,61 @@
+li {
+    text-align: left;
+}
+
+.movie {
+    border: 1px chocolate solid;
+    margin-bottom: .5em;
+}
+
+.title {
+    color: brown;
+    text-align: left;
+}
+
+.release {
+    color: blueviolet;
+    position: absolute;
+    margin-left: -600px;
+    margin-top: -40px;
+    text-align: left;
+}
+
+.rating {
+    color: purple;
+    position: absolute;
+    margin-left: -500px;
+    margin-top: -40px;
+    text-align: left;
+}
+
+.genre {
+    color: darkblue;
+    position: absolute;
+    margin-left: -600px;
+    margin-top: -40px;
+    text-align: left;
+}
+
+.language {
+    color: darkgreen;
+    position: absolute;
+    margin-left: -100px;
+    margin-top: -40px;
+    text-align: left;
+}
+
+.stars {
+    position: absolute;
+    margin-left: -600px;
+    color: chocolate;
+    margin-top: -40px;
+    text-align: left;
+}
+
+.director {
+    position: absolute;
+    margin-left: -600px;
+    color: blue;
+    margin-top: -40px;
+    text-align: left;
+}
