@@ -61,6 +61,79 @@
         "rating": 8.8
       },
       "id": 4
+    },
+    {
+      "movie": {
+        "title": "Jersey",
+        "stars": "Nani, Shraddha, Sathyaraj",
+        "director": "Gowtham Tinnanuri",
+        "language": "Telugu",
+        "release": 2019,
+        "genre": [
+          "Drama",
+          "Sports"
+        ],
+        "rating": 8.5
+      },
+      "id": 5
+    },
+    {
+      "movie": {
+        "title": "The Shawshank Redenption",
+        "stars": "Tim Robbins, Morgan Freeman, Bob Gunton",
+        "director": "Frank Darabont",
+        "language": "English",
+        "release": 1994,
+        "genre": [
+          "Drama"
+        ],
+        "rating": 9.3
+      },
+      "id": 6
+    },
+    {
+      "movie": {
+        "title": "#Home",
+        "stars": "Indrans, Sreenath Bhasi, Manju Pillai",
+        "director": "Rojin Thomas",
+        "language": "Malayalam",
+        "release": 2021,
+        "genre": [
+          "Drama"
+        ],
+        "rating": 8.8
+      },
+      "id": 7
+    },
+    {
+      "movie": {
+        "title": "3 Idiots",
+        "stars": "Aamir Khan, Madhavan, Sharman Joshi, Katreena Kaif, Boman Irani",
+        "director": "Rajkumar Hirani",
+        "language": "Hindi",
+        "release": 2009,
+        "genre": [
+          "Comedy",
+          "Drama"
+        ],
+        "rating": 8.4
+      },
+      "id": 8
+    },
+    {
+      "movie": {
+        "title": "The Godfather",
+        "stars": "Marlon Brando, Al Pacino, James Caan",
+        "director": "Francis Ford Coppola",
+        "language": "English",
+        "release": 1972,
+        "genre": [
+          "Crime",
+          "Drama"
+        ],
+        "rating": 9.2
+      },
+      "id": 9
     }
   ]
 }

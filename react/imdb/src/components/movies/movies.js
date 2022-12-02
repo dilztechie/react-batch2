@@ -23,47 +23,57 @@ export default function Movies() {
   const [title, setTitle] = useState('')
   const [stars, setStars] = useState('')
   const [director, setDirector] = useState('')
-  const [genre, setGenre] = useState([])
-  const [language, setLanguage] = useState('')
   const [release, setRelease] = useState(0)
   const [rating, setRating] = useState(0)
 
+  const [alert, setAlert] = useState(false)
+
+  let mounted = true
+
   useEffect(() => {
-    let mounted = true
+    if (movies.length && !alert) return
     getMovies().then(movies => {
-      if (mounted) setMovies(movies)
+      if (mounted) {
+        setMovies(movies)
+        setAlert(false)
+      }
     })
     return () => mounted = false
-  }, [])
+  }, [alert, movies])
 
   const handleSubmit = event => {
     event.preventDefault()
+    let language = document.getElementById('language').value
+    let selectedGenre = document.getElementById('genre').selectedOptions
+    let genre = []
+    for (let index = 0; index < selectedGenre.length; ++index)
+      if (selectedGenre[index].selected) genre.push(selectedGenre[index].value)
     setMovie({ "movie": { title, stars, director, language, release, genre, rating } })
     setTitle('')
     setStars('')
     setDirector('')
-    setGenre([])
-    setLanguage('')
+    for (let index = 0; index < selectedGenre.length; ++index)
+      selectedGenre[index].selected = false
+    document.getElementById('language').value = ''
     setRelease(0)
     setRating(0)
+    if (mounted) setAlert(true)
   }
-
-  const handleChangeGenre = event =>
-    setGenre(Array.from(event.target.selectedOptions, option => option.value))
 
   return <div className="wrapper">
     <div className="header">Top Rated Movies</div>
     {movies.map(eachMovie => <Movie movie={eachMovie.movie} key={eachMovie.id} />)}
     <hr />
+    {alert && <h3>Submit Successful</h3>}
     <form onSubmit={handleSubmit}>
       <input value={title} placeholder="title" onChange={event => setTitle(event.target.value)} />
       <input value={stars} placeholder="stars" onChange={event => setStars(event.target.value)} />
       <input value={director} placeholder="director" onChange={event => setDirector(event.target.value)} /> <br />
-      <select multiple onChange={handleChangeGenre}>
+      <select multiple id="genre">
         <option value="" disabled>---genre---</option>
         {genres.map(genre => <option value={genre}>{genre}</option>)}
       </select>
-      <select onChange={event => setLanguage(event.target.value)}>
+      <select id="language">
         <option value="" disabled>---language---</option>
         {languages.map(language => <option value={language}>{language}</option>)}
       </select>
