@@ -1,0 +1,16 @@
+.restaurant {
+    display: inline-flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid gold;
+    margin-top: auto;
+    margin-left: -600px;
+    margin-right: -500px;
+}
+
+button {
+    background-color: aquamarine;
+    color: blueviolet;
+    border: 1px;
+    height: 150px;
+}
