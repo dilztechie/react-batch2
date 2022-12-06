@@ -10,34 +10,34 @@ export default function App() {
       name: 'New Kudla',
       address: 'Ashok Nagar, Mangalore',
       cuisines: ['North Indian', 'Chinese', 'Seafood', 'Shake'],
-      menu: '../../assets/new-kudla'
+      menu: '/assets/new-kudla'
     }, {
       id: 1002,
       name: "Shetty's Kori Rotti",
       address: 'Kodailbail, Mangalore',
       cuisines: ['North Indian', 'South Indian', 'Chinese'],
-      menu: '../../assets/kori-rotti'
+      menu: '/assets/kori-rotti'
     }],
     thali: [{
       id: 2001,
       name: "Machli",
       address: 'Kodailbail, Mangalore',
       cuisines: ['Seafood', 'Mangalorean', 'South Indian'],
-      menu: '../../assets/machli'
+      menu: '/assets/machli'
     }],
     pizza: [{
       id: 3001,
       name: "Dominos Pizza",
       address: 'Kankanady, Mangalore',
       cuisines: ['Pizza', 'Fast Food', 'Desserts', 'Italian', 'Pasta'],
-      menu: '../../assets/dominos'
+      menu: '/assets/dominos'
     }],
     chinese: [{
       id: 4001,
       name: "New Hao Hao",
       address: 'Bendoor, Mangalore',
       cuisines: ['Chinese', 'Asian', 'Sichuan'],
-      menu: '../../assets/hao-hao'
+      menu: '/assets/hao-hao'
     }]
   }))
 
