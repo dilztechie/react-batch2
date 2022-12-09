@@ -1,0 +1,34 @@
+{
+    "users": [
+        {
+            "user": {
+                "name": "Dilip Malani",
+                "username": "dilip",
+                "email": "mail2dilz@gmail.com",
+                "password": "dilz1226",
+                "role": "admin"
+            },
+            "id": 1
+        },
+        {
+            "user": {
+                "name": "Kiran Bekalkar",
+                "username": "kiran",
+                "email": "kiran.b@gmail.com",
+                "password": "kinnu1512",
+                "role": "user"
+            },
+            "id": 2
+        },
+        {
+            "user": {
+                "name": "Gopal Narayan",
+                "username": "gopal",
+                "email": "gopal.n@gmail.com",
+                "password": "gopi0812",
+                "role": "user"
+            },
+            "id": 3
+        }
+    ]
+}

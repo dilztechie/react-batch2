@@ -4,11 +4,18 @@ import { Routes, Route, Link } from 'react-router-dom';
 import LoginPage from './components/login-page/login-page';
 import HomePage from './components/home-page/home-page';
 import RegisterPage from './components/register-page/register-page';
-import ProfilePage from './components/profile-page/profile-page';
+import TestUsers from './components/test-users/test-users';
+import AdminProfilePage from './components/admin-profile-page/admin-profile-page';
+import UserProfilePage from './components/user-profile-page/user-profile-page';
+import React from 'react';
 
-export default function App() {
-  return (
-    <div className="App">
+export default class App extends React.Component {
+  state = { name: null }
+
+  handleName = name => this.setState({ name: name })
+
+  render = () => <>
+    <div className="App" >
       <header className="App-header">Dilz Inc.</header>
       <div className='wrapper'>
         <nav className='navbar navbar-expand navbar-dark bg-dark'>
@@ -33,12 +40,14 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/home" element={<HomePage />} />
-            <Route path="/login" element={<LoginPage />} />
+            <Route path="/login" element={<LoginPage handleName={this.handleName} />} />
             <Route path="/register" element={<RegisterPage />} />
-            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/profile/admin" element={<AdminProfilePage name={this.state.name} />} />
+            <Route path="/profile/user" element={<UserProfilePage name={this.state.name} />} />
+            <Route path="/test" element={<TestUsers />} />
           </Routes>
         </div>
       </div>
     </div>
-  )
+  </>
 }

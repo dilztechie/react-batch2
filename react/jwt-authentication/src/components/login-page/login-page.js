@@ -4,6 +4,8 @@ import profileImage from '../../assets/profile.jpg'
 import Form from 'react-validation/build/form'
 import Input from 'react-validation/build/input'
 import CheckButton from 'react-validation/build/button'
+import AuthenticationService from "../../services/authentication-service";
+import { withRouter } from "../../common/with-router";
 
 const required = value => {
   if (!value)
@@ -14,12 +16,13 @@ const required = value => {
     </div>
 }
 
-export default class LoginPage extends React.Component {
+class LoginPage extends React.Component {
   constructor(props) {
     super(props)
     this.handleLogin = this.handleLogin.bind(this)
     this.handleUsername = this.handleUsername.bind(this)
     this.handlePassword = this.handlePassword.bind(this)
+    this.handleName = this.props.handleName
   }
 
   state = {
@@ -36,6 +39,15 @@ export default class LoginPage extends React.Component {
     event.preventDefault()
     this.setState({ message: "", loading: true })
     this.form.validateAll()
+    if (this.checkBtn.context._errors.length === 0) {
+      let data = AuthenticationService.login(this.state.username, this.state.password)
+      if (data !== null) {
+        this.handleName(data.user.name)
+        this.props.router.navigate("/profile/" + data.user.role)
+      } else {
+        this.setState({ loading: false, message: "User Not Found" })
+      }
+    }
   }
 
   render = () => <>
@@ -75,3 +87,5 @@ export default class LoginPage extends React.Component {
     </div>
   </>
 }
+
+export default withRouter(LoginPage)

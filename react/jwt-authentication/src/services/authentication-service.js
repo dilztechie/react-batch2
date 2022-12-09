@@ -1,17 +1,25 @@
-import axios from "axios"
+class AuthenticationService {
 
-export default class AuthenticationService {
-    login = (username, password) =>
-        axios.post('http://localhost:7080/api/auth', { username, password })
-            .then(response => {
-                localStorage.setItem("user", JSON.stringify(response.data))
-                return response.data
+    result = null
+
+    login = (username, password) => {
+        fetch("http://localhost:3030/users")
+            .then(response => response.json())
+            .then(users => {
+                users.map(data => {
+                    if (data.user.username === username && data.user.password === password) {
+                        this.result = data
+                    }
+                    return this.result
+                })
             })
+        return this.result
+    }
 
     logout = () => localStorage.removeItem("user")
 
-    register = (username, email, password) =>
-        axios.post('http://localhost:7080/api/auth', { username, email, password })
-
     getCurrentUser = () => JSON.parse(localStorage.getItem("user"))
+
 }
+
+export default new AuthenticationService()
