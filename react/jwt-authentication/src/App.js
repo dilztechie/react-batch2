@@ -10,10 +10,6 @@ import UserProfilePage from './components/user-profile-page/user-profile-page';
 import React from 'react';
 
 export default class App extends React.Component {
-  state = { name: null }
-
-  handleName = name => this.setState({ name: name })
-
   render = () => <>
     <div className="App" >
       <header className="App-header">Dilz Inc.</header>
@@ -40,10 +36,10 @@ export default class App extends React.Component {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/home" element={<HomePage />} />
-            <Route path="/login" element={<LoginPage handleName={this.handleName} />} />
+            <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
-            <Route path="/profile/admin" element={<AdminProfilePage name={this.state.name} />} />
-            <Route path="/profile/user" element={<UserProfilePage name={this.state.name} />} />
+            <Route path="/profile/admin" element={<AdminProfilePage />} />
+            <Route path="/profile/user" element={<UserProfilePage />} />
             <Route path="/test" element={<TestUsers />} />
           </Routes>
         </div>

@@ -22,7 +22,6 @@ class LoginPage extends React.Component {
     this.handleLogin = this.handleLogin.bind(this)
     this.handleUsername = this.handleUsername.bind(this)
     this.handlePassword = this.handlePassword.bind(this)
-    this.handleName = this.props.handleName
   }
 
   state = {
@@ -40,12 +39,15 @@ class LoginPage extends React.Component {
     this.setState({ message: "", loading: true })
     this.form.validateAll()
     if (this.checkBtn.context._errors.length === 0) {
-      let data = AuthenticationService.login(this.state.username, this.state.password)
-      if (data !== null) {
-        this.handleName(data.user.name)
-        this.props.router.navigate("/profile/" + data.user.role)
-      } else {
+      AuthenticationService.login(this.state.username, this.state.password)
+      let user = JSON.parse(localStorage.getItem("user"))
+      console.log(user)
+      if (user.role !== undefined) {
+        this.props.router.navigate("/profile/" + user.role)
+      }
+      else {
         this.setState({ loading: false, message: "User Not Found" })
+        this.props.router.navigate("/login")
       }
     }
   }
