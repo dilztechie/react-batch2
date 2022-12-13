@@ -22,13 +22,15 @@ class LoginPage extends React.Component {
     this.handleLogin = this.handleLogin.bind(this)
     this.handleUsername = this.handleUsername.bind(this)
     this.handlePassword = this.handlePassword.bind(this)
-  }
-
-  state = {
-    username: "",
-    password: "",
-    message: "",
-    loading: false
+    this.state = {
+      username: "",
+      password: "",
+      message: "",
+      loading: false
+    }
+    localStorage.removeItem("user")
+    localStorage.removeItem("isLoggedIn")
+    localStorage.removeItem("isRegistered")
   }
 
   handleUsername = event => this.setState({ username: event.target.value })
@@ -39,10 +41,9 @@ class LoginPage extends React.Component {
     this.setState({ message: "", loading: true })
     this.form.validateAll()
     if (this.checkBtn.context._errors.length === 0) {
-      AuthenticationService.login(this.state.username, this.state.password)
-      let user = JSON.parse(localStorage.getItem("user"))
-      console.log(user)
-      if (user.role !== undefined) {
+      let user = AuthenticationService.login(this.state.username, this.state.password)
+      if (user !== null) {
+        localStorage.setItem("isLoggedIn", true)
         this.props.router.navigate("/profile/" + user.role)
       }
       else {

@@ -29,6 +29,16 @@
                 "role": "user"
             },
             "id": 3
+        },
+        {
+            "user": {
+                "name": "Kavya Malani",
+                "username": "kavz",
+                "email": "kavz.m@gmail.com",
+                "password": "kavz2612",
+                "role": "user"
+            },
+            "id": 4
         }
     ]
 }
