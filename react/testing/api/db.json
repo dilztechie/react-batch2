@@ -1,0 +1,46 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Task-1",
+      "author": "dilz",
+      "isCompleted": false
+    },
+    {
+      "id": 2,
+      "title": "Task-2",
+      "author": "kinnu",
+      "isCompleted": false
+    },
+    {
+      "id": 3,
+      "title": "Task-3",
+      "author": "gopi",
+      "isCompleted": false
+    },
+    {
+      "title": "Task-4",
+      "author": "mone",
+      "isCompleted": false,
+      "id": 4
+    },
+    {
+      "title": "Task-5",
+      "author": "kavz",
+      "isCompleted": false,
+      "id": 5
+    },
+    {
+      "title": "Task-6",
+      "author": "dilz",
+      "isCompleted": false,
+      "id": 6
+    },
+    {
+      "title": "Task-7",
+      "author": "gopi",
+      "isCompleted": false,
+      "id": 7
+    }
+  ]
+}
