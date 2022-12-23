@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const CreateMovie = props => {
     const [movie, setMovie] = useState({
+        _id: 0,
         title: '',
         starring: '',
         directors: '',
@@ -12,6 +13,22 @@ const CreateMovie = props => {
         year: 0
     })
 
+    const updateId = () =>
+        axios.get('http://localhost:8082/api/movies')
+            .then(response => {
+                let movies = response.data
+                if (movies.length === 0) setMovie({ ...movie, _id: 1 })
+                else {
+                    for (let eachMovie of movies) {
+                        if (eachMovie._id > movie._id)
+                            setMovie({ ...movie, _id: ++eachMovie._id })
+                    }
+                }
+            })
+            .catch(error => console.log(error))
+
+    updateId()
+
     const navigate = useNavigate()
 
     const handleOnSubmit = event => {
@@ -19,6 +36,7 @@ const CreateMovie = props => {
         axios.post('http://localhost:8082/api/movies', movie)
             .then(response => {
                 setMovie({
+                    _id: 0,
                     title: '',
                     starring: '',
                     directors: '',
@@ -35,7 +53,7 @@ const CreateMovie = props => {
         setMovie({ ...movie, [event.target.name]: event.target.value })
     }
 
-    return (<div className="createMovie">
+    return (<div className="createMovie" >
         <div className="container">
             <div className="row">
                 <div className="col-md-8 m-auto">
@@ -48,6 +66,7 @@ const CreateMovie = props => {
                     <h1 className="display-4 text-center">Add Movie</h1>
                     <p className="lead text-center">Create New Movie</p>
                     <form noValidate autoComplete={"off"} onSubmit={handleOnSubmit}>
+                        <input type="hidden" name="_id" value={movie._id} />
                         <div className="form-group">
                             <input type="text" placeholder="title of the movie?"
                                 name="title" className="form-control" value={movie.title}
@@ -88,7 +107,7 @@ const CreateMovie = props => {
                 </div>
             </div>
         </div>
-    </div>)
+    </div >)
 }
 
 export default CreateMovie

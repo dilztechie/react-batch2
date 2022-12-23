@@ -1,16 +1,21 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 const ShowMovieDetails = props => {
     const [movie, setMovie] = useState({})
     const { _id } = useParams()
+    const navigate = useNavigate()
 
     useEffect(() => {
         axios.get(`http://localhost:8082/api/movies/${_id}`)
             .then(response => setMovie(response.data))
             .catch(error => console.log(error))
     }, [_id])
+
+    const handleDeleteMovie = () => axios.delete(`http://localhost:8082/api/movies/${_id}`)
+        .then(response => navigate('/'))
+        .catch(error => console.log(error))
 
     const MovieItem = <div>
         <table className="table table-hover table-dark">
@@ -68,7 +73,8 @@ const ShowMovieDetails = props => {
                 </div>
                 <div className="col-md-10 m-auto">{MovieItem}</div>
                 <div className="col-md-6 m-auto">
-                    <button type="button" className="btn btn-outline-danger btn-lg btn-block">
+                    <button type="button" className="btn btn-outline-danger btn-lg btn-block"
+                        onClick={handleDeleteMovie}>
                         Delete Movie
                     </button>
                 </div>
